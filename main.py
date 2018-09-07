@@ -27,7 +27,7 @@ def create_tokens(name, expiry):
   values = {
     "description": str(name),
     "canManageBuckets": Manage_buckets,
-    "canReadAllFileUploads": read_all_f_uploads = True,
+    "canReadAllFileUploads": read_all_f_uploads,
     "expiresIn": expiry
   }
 
