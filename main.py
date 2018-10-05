@@ -57,7 +57,7 @@ with open('/data/in/tables/Applicants.csv', mode='rt', encoding='utf-8') as in_f
             datetime_obj = datetime.datetime.strptime(person["receive_sandbox_on"], format_str)
             days_to_send = (datetime_obj.date() - today.date()).days
             if person["sandbox_sent_on"] == '' and person["ID"] not in used_ids and \
-            person["final_decision"] == 'Yes' and days_to_send in [0,1,2]:
+            person["final_decision"] == 'Yes' and days_to_send in [-2,-1,0,1,2]:
                 email = str(person["email"])
                 info = create_tokens(name = email, expiry = EXPIRY)
                 user = {"name": person["name"], "ID": person["ID"], "username": info["description"],
